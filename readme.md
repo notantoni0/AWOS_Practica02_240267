@@ -14,3 +14,4 @@
 |No.|Descripción|Potenciador|Estatus|
 |---|---|---|---|
 |1.|Declaración de Variables|1|Finalizada|
+|2.|Tipos de Datos|1|Finalizada|
