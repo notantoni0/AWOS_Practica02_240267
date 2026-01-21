@@ -15,3 +15,4 @@
 |---|---|---|---|
 |1.|Declaración de Variables|1|Terminado|
 |2.|Tipos de Datos|1|Terminado|
+|3.|Funciones|1|Terminado|
