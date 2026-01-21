@@ -13,4 +13,4 @@
 
 |No.|Descripción|Potenciador|Estatus|
 |---|---|---|---|
-|1.|Declaración de Variables|1|En progreso|
+|1.|Declaración de Variables|1|Terminada|
