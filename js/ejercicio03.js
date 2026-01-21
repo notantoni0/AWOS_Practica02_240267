@@ -444,3 +444,74 @@ console.log("")
 console.log("test 1, usuario='antoniooo' y contraseña '061031'");
 loginStatus = login("antoniooo", "061031");
 console.log(`${loginStatus ? 'El usuario admin se ha logeado exitosamente' : 'Hubo un error en login del usuario admin'}`);
+
+// 5. fhncionew anonikas sin perametros (ver extendida)
+
+isNewUser = function(){
+    const hoy = new Date();
+    return (
+        lastLogin.getFullYear() == hoy.getFullYear() &&
+        lastLogin.getMonth() == hoy.getMonth() &&
+        lastLogin.getDate() == hoy.getDate()
+    );
+};
+
+console.warn("5. Funciones anónimas, sin parámetros");
+
+console.log("test 1 - fecha de ultimo acceso es igual a la fecha de hoy");
+console.log(`la fecha de tu utlimo acceso es: ${lastLogin}`);
+console.log(`el usuario logeado es ${isNewUser()?"nuevo usuario":"usuario antiguo"}`);
+
+console.log("");
+
+lastLogin = new Date("2025-12-31");
+console.log("test 1 - fecha de ultimo acceso es diferente a la fecha de hoy");
+console.log(`la fecha de tu utlimo acceso es: ${lastLogin}`);
+console.log(`el usuario logeado es ${isNewUser()?"nuevo usuario":"usuario antiguo"}`);
+
+// funciones anonimas con paramertros (arrow o lambda)
+
+const sumar = (a, b) => {
+    let resultado = a+b;
+    return resultado;
+}
+
+console.warn("6. funcuones anónimas con parámetros")
+console.log(`El resultado de sumar de 15 + 83 es: ${sumar(15, 83)}`);
+
+//cuandio la funcon anonima tiene solo una linea de operacion se puede usar una version simplificada q no usa (), {}, ni la palabra reservada return
+const multiplicar = (a,b) => a*b;
+console.log(`El resultado de multiplicar 15 por 125 es: ${multiplicar(15,125)}`);
+
+console.warn("7. funciones anonimas callback (respuestas)")
+const recoverPassword = function(email, callback)
+{
+
+    const recoveryCode= Math.floor(1000000 + Math.random()*900000)
+
+    console.log(`
+
+        ==============================================================================
+
+        solicitud de recuperacion recivida
+        correo del usuario sollicitante: ${email}
+        generando codigo de recuperacion...
+        codigo de sguridad generado: ${recoveryCode}
+        enviando el correo al usuario...
+        correo enviado a : ${email}, con el codigo de seguridad: ${recoveryCode}
+        ========================================================================================`);
+
+        const response ={
+            status: "ok",
+            message: "codigo de recuperacion enviando satisfactoriamente."
+        };
+
+        callback(response);
+    };
+
+
+    recoverPassword("antonioo@mail.com",
+    function(systemResponse){
+        console.log("Respuesta del sistema: ");
+        console.log(systemResponse.message);
+    });
